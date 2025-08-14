@@ -1,30 +1,18 @@
-// #bolvdlhP
+// #EP5I1UUzAX
 //
-// описати колоду карт (від 6 до туза без джокерів). Більшу частину колоди можна описати з використанням циклу
+// Взяти описану колоду карт, та за допомогою reduce “упакувати” всі карти по “мастях” в об’єкт
 //
-// Після опису, використовуючи функції масивів:
-//
-//     – знайти піковий туз
-//
-//  – всі шістки
-//
-//  – всі червоні карти
-//
-//  – всі буби
-//
-//  – всі трефи від 9 та більше
-//
-//
-//
-// Приклад моделі об’єкту карти:
+// Приклад моделі кінцевого об’єкту
 //
 // {
 //
-//     cardSuit: ”, // ‘spade’, ‘diamond’,’heart’, ‘clubs’
+//     spades:[],
 //
-//     value: ”, // ‘6’-’10’, ‘ace’,’jack’,’queen’,’king’
+//     diamonds:[],
 //
-//     color:”, // ‘red’,’black’
+//     hearts:[],
+//
+//     clubs:[]
 //
 // }
 
@@ -45,25 +33,7 @@ for (const cardSuit of cardSuits ) {
 }
 // console.log(cards);
 
-let result = cards.reduce((accumulator, card) => {
-    // console.log(card);
-    if(card.cardSuit === 'diamond') {
-        accumulator.diamonds.push(card);
-    }else if(card.cardSuit === 'heart') {
-        accumulator.hearts.push(card);
-    }else if(card.cardSuit === 'spade') {
-        accumulator.spades.push(card);
-    } else{
-        accumulator.clubs.push(card)
-    }
-    return accumulator;
-},
-    {diamonds: [],
-        hearts: [],
-        spades: [],
-        clubs: []
-    });
-console.log(result);
+
 
 const reduse = cards.reduce((accumulator, card) => {
     switch (card.cardSuit) {
